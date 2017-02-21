@@ -41,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,12 +51,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BazaDanych.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BazaDanych.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BazaDanych.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BazaDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BazaDanych.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BazaDanych.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Notes.cs">
+      <DependentUpon>BazaDanych.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasks.cs">
+      <DependentUpon>BazaDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskUsers.cs">
+      <DependentUpon>BazaDanych.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>BazaDanych.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="BazaDanych.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BazaDanych.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BazaDanych.edmx.diagram">
+      <DependentUpon>BazaDanych.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BazaDanych.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BazaDanych.edmx</DependentUpon>
+      <LastGenOutput>BazaDanych.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BazaDanych.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BazaDanych.edmx</DependentUpon>
+      <LastGenOutput>BazaDanych.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
